@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Investisseur{% endblock %}
+
+{% block body %}
+    <h1>Create new Investisseur</h1>
+
+    {{ include('investisseur/_form.html.twig') }}
+
+    <a href="{{ path('investisseur_index') }}" class="btn btn-primary" role="button">back to list</a>
+{% endblock %}

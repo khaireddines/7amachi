@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Investisseur index{% endblock %}
+
+{% block body %}
+    <h1>Investisseurs</h1>
+
+    <table class="table" id="example" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Mat</th>
+                <th>Adresse</th>
+                <th>NomSociete</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for investisseur in investisseurs %}
+            <tr>
+                <td>{{ investisseur.id }}</td>
+                <td>{{ investisseur.Mat }}</td>
+                <td>{{ investisseur.Adresse }}</td>
+                <td>{{ investisseur.NomSociete }}</td>
+                <td>
+                    <a href="{{ path('investisseur_show', {'id': investisseur.id}) }}" class="btn btn-warning" role="button">show</a>
+                    <a href="{{ path('investisseur_edit', {'id': investisseur.id}) }}" class="btn btn-success" role="button">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('investisseur_new') }}" class="btn btn-primary" role="button">Create new</a>
+{% endblock %}

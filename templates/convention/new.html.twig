@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Convention{% endblock %}
+
+{% block body %}
+    <h1>Create new Convention</h1>
+
+    {{ include('convention/_form.html.twig') }}
+
+    <a href="{{ path('convention_index') }}" class="btn btn-primary" role="button">back to list</a>
+{% endblock %}
